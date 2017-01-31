@@ -1,0 +1,125 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'helvetica', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+h1, h2 {
+    font-weight: lighter;
+}
+h1 {
+    color: deeppink;
+}
+canvas {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+#settings {
+    background-color: rgba(255, 255, 255, 1);
+    display: none;
+    position: fixed;
+    padding-top: 60px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: scroll;
+}
+#settings > h1 {
+    padding: 10px 10px;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 26%,rgba(255,255,255,1) 71%,rgba(255,255,255,0) 100%);
+    top: 0px;
+}
+#settings > h2 {
+    margin: 0px 10px;
+}
+#settings > div {
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.settings-icon {
+    position: fixed;
+    background-color: transparent;
+    top: 0px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    padding: 20px;
+    pointer-events: none;
+    transition-property: opacity;
+    transition-duration: 450ms;
+}
+.settings-icon.active {
+    pointer-events: all;
+    opacity: 1;
+}
+.settings-icon path {
+    fill: dodgerblue;
+}
+input[type=radio] {
+    display: none;
+}
+input[type=radio] + label {
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    width: 45%;
+    height: 200px;
+    display: block;
+    border: 4px solid #aaa;
+}
+#rdLine + label {
+    background-image: url('resources/line.png');
+}
+#rdScatter + label {
+    background-image: url('resources/scatter.png');
+}
+#rdShrink + label {
+    background-image: url('resources/ball.png');
+    background-size: 40%;
+}
+#rdGrow + label {
+    background-image: url('resources/ball.png');
+}
+#rdDark + label {
+    background-color: #333;
+}
+input[type=radio]:checked + label {
+    border-color: deeppink;
+}
+.dark {
+    background-color: #333;
+}
+.dark #settings {
+    background-color: #333;
+}
+.dark #settings > h1 {
+    background: linear-gradient(to bottom, rgba(51,51,51,1) 0%,rgba(51,51,51,1) 26%,rgba(51,51,51,1) 71%,rgba(51,51,51,0) 100%);
+}
+.dark #settings > h2 {
+    color: #eee;
+}
+#debug {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    font-size: 24pt;
+    max-width: 100%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    display: none
+}
